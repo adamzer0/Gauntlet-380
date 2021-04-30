@@ -22,44 +22,67 @@ public class PlayerMove : MonoBehaviour
         newpos = transform.position;
         //this system creates a total of 12 raycasts, checking the top bottom and middle of the character for geometry. 
         //If it runs into anything that it can raycast hit, the player cannot move in said direction
+        //as the player can attack through corner gaps, the player can face a wall, just not move into said wall.
         if (Input.GetKey("w"))
         {
-
+            shootdirection = "up";
+            neweuler.y = 0;
             if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position+ Vector3.right/2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position+ Vector3.left/2, (Vector3.forward), speed + 0.5f))
             {
                 newpos.z += speed;
-                neweuler.y = 0;
-                shootdirection = "up";
+
+
             }
         }
         if (Input.GetKey("s"))
         {
-
+            neweuler.y = 180;
+            shootdirection = "down";
             if (!Physics.Raycast(transform.position, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.back), speed + 0.5f))
             {
                 newpos.z -= speed;
-                neweuler.y = 180;
-                shootdirection = "down";
+
             }
         }
         if (Input.GetKey("a"))
         {
-
+            neweuler.y = 270;
+            shootdirection = "left";
             if (!Physics.Raycast(transform.position, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.left), speed + 0.5f))
             {
                 newpos.x -= speed;
-                neweuler.y = 270;
-                shootdirection = "left";
+               
+                if (Input.GetKey("w"))
+                {
+                    shootdirection = "uleft";
+                    neweuler.y = 315;
+                }
+                if (Input.GetKey("s"))
+                {
+                    shootdirection = "dleft";
+                    neweuler.y = 235;
+                }
             }
         }
         if (Input.GetKey("d"))
         {
-
+            neweuler.y = 90;
+            shootdirection = "right";
             if (!Physics.Raycast(transform.position, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.right), speed + 0.5f))
             {
                 newpos.x += speed;
-                neweuler.y = 90;
-                shootdirection = "right";
+               
+                if (Input.GetKey("w"))
+                {
+                    shootdirection = "uright";
+                    neweuler.y = 45;
+                }
+                if (Input.GetKey("s"))
+                {
+                    shootdirection = "dright";
+                    neweuler.y = 135;
+                }
+
             }
         }
         //basic execution of movement and rotation
@@ -84,6 +107,22 @@ public class PlayerMove : MonoBehaviour
             if (shootdirection == "right")
             {
                 Instantiate(projectile, transform.position + Vector3.right, transform.rotation);
+            }
+            if (shootdirection == "uright")
+            {
+                Instantiate(projectile, transform.position + Vector3.right + Vector3.forward, transform.rotation);
+            }
+            if (shootdirection == "dright")
+            {
+                Instantiate(projectile, transform.position + Vector3.right + Vector3.back, transform.rotation);
+            }
+            if (shootdirection == "uleft")
+            {
+                Instantiate(projectile, transform.position + Vector3.left + Vector3.forward, transform.rotation);
+            }
+            if (shootdirection == "dleft")
+            {
+                Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
             }
         }
     }
