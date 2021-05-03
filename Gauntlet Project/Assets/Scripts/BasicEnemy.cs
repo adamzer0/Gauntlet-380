@@ -59,6 +59,7 @@ public class BasicEnemy : MonoBehaviour
                 {
                    
                     neweuler.y = 235;
+                    
                 }
                 else
                 {

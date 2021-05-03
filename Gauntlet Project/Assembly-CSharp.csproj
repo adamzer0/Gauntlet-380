@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\BasicEnemy.cs" />
     <Compile Include="Assets\Scripts\BulletMove.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\TestMe.cs" />
     <Compile Include="Assets\TESTFILE.cs" />

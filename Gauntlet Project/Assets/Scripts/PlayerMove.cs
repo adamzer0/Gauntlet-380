@@ -14,6 +14,11 @@ public class PlayerMove : MonoBehaviour
     //the projectile that the class shoots.
     public GameObject projectile;
 
+    public int health = 600;
+    public int score = 0;
+    public int bombs = 0;
+    public int keys = 0;
+    public int storage = 10;
     // Update is called once per frame
     void Update()
     {
@@ -124,6 +129,52 @@ public class PlayerMove : MonoBehaviour
             {
                 Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
             }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        //when a pickup is picked up, it will be given tothe player.
+        //using the pickup's code it can be a bomb key chest or food.
+        //based on that you will heal or gain score/items.
+        if (other.gameObject.tag == "Pickup")
+        {
+            var picktype = other.gameObject.GetComponent<Pickup>();
+            if (picktype.type == "Food")
+            {
+                health += picktype.amount;
+                Destroy(other.gameObject);
+            }
+            if (picktype.type == "Chest")
+            {
+                score += picktype.amount;
+                Destroy(other.gameObject);
+            }
+            //bombs and keys may only be picked up if you have room.
+            if (storage >= 1)
+            {
+                if (picktype.type == "Bomb")
+                {
+                    storage -= 1;
+                    bombs += 1;
+                    Destroy(other.gameObject);
+                }
+                if (picktype.type == "Key")
+                {
+                    keys += 1;
+                    storage -= 1;
+                    Destroy(other.gameObject);
+                }
+            }
+        }
+
+
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        //needs work
+        if (other.gameObject.tag == "Enemy")
+        {
+            health -= 1;
         }
     }
 }
