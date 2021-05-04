@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: aa3eca74c6de256478180986e852b893
+guid: 91820db7a88a64716ac8043bb4d31d08
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - lobberprojectile: {fileID: 6434496826205815586, guid: c545ce3eca63e4e02b1ee62eefb6d144,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

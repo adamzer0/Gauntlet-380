@@ -12,14 +12,14 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 0.03f;
     public int health;
 
-  
-  
+
+
     // Update is called once per frame
-    private void Awake()
+    public virtual void Awake()
     {
         player = GameObject.FindWithTag("Player");
     }
-    void Update()
+    public virtual void Update()
     {
         newpos = transform.position;
         neweuler = transform.eulerAngles;
