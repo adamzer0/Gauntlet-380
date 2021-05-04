@@ -12,6 +12,9 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 0.03f;
     public int health;
 
+    public string type = "Ghost";
+    public bool projEnemy;
+    public float fireDelay; 
     // Update is called once per frame
     private void Awake()
     {
@@ -94,6 +97,8 @@ public class BasicEnemy : MonoBehaviour
         }
         transform.eulerAngles = neweuler;
         transform.position = newpos;
+        // if projectile enemy not delayed (instantiate projectile)
+        //start firing delay coroutine
     }
     private void OnTriggerEnter(Collider other)
     {

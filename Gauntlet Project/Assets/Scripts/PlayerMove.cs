@@ -166,6 +166,21 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
+        if(other.gameObject.tag=="Enemy")
+        {
+            Debug.Log("trigger enter with enemy");
+            var enemyType = other.gameObject.GetComponent<BasicEnemy>(); 
+            if(enemyType.type=="Ghost")
+            {
+                Debug.Log("enemyType recognized : ghost");
+                health -= 1; 
+                Destroy(other.gameObject);
+            }//ghosts are destroyed upon impact of player
+            else
+            {
+                return;
+            }//return if not ghost as to not double damage fron ontriggerstay func
+        }
 
 
     }
