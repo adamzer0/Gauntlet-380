@@ -12,9 +12,8 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 0.03f;
     public int health;
 
-    public string type = "Ghost";
-    public bool projEnemy;
-    public float fireDelay; 
+  
+  
     // Update is called once per frame
     private void Awake()
     {

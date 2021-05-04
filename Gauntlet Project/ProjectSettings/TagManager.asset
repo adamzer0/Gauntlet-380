@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Enemy
   - Pickup
+  - Drained
+  - Thief
   layers:
   - Default
   - TransparentFX

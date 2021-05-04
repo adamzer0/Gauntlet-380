@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1938900197957535093}
   - component: {fileID: 5525374953075178304}
   - component: {fileID: 1767983748030990227}
-  - component: {fileID: 4217290714048431972}
-  - component: {fileID: 4336806878063417193}
   - component: {fileID: -3415047651803719507}
+  - component: {fileID: 2393900671898797969}
+  - component: {fileID: 3589233008022988105}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Enemy
@@ -80,40 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4217290714048431972
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2805485111930937690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4336806878063417193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2805485111930937690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87eec76751003497e8961bb7144808fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  newpos: {x: 0, y: 0, z: 0}
-  neweuler: {x: 0, y: 0, z: 0}
-  speed: 0.03
-  health: 1
-  type: Ghost
-  projEnemy: 0
-  fireDelay: 0
 --- !u!54 &-3415047651803719507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,3 +96,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2393900671898797969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805485111930937690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca77d6198342bf3499d2ef9b9c6c4edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  newpos: {x: 0, y: 0, z: 0}
+  neweuler: {x: 0, y: 0, z: 0}
+  speed: 0.03
+  health: 1
+--- !u!65 &3589233008022988105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805485111930937690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 2, z: 1.05}
+  m_Center: {x: 0, y: 0, z: 0}

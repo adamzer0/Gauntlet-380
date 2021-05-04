@@ -20,6 +20,9 @@ public class PlayerMove : MonoBehaviour
     public int keys = 0;
     public int storage = 10;
     // Update is called once per frame
+
+    public bool hasBomb=false;
+    public bool hasKey=false; 
     void Update()
     {
         //basic setting up of rotation and movement;
@@ -156,30 +159,17 @@ public class PlayerMove : MonoBehaviour
                 {
                     storage -= 1;
                     bombs += 1;
+                    hasBomb = true;
                     Destroy(other.gameObject);
                 }
                 if (picktype.type == "Key")
                 {
                     keys += 1;
                     storage -= 1;
+                    hasKey = true;
                     Destroy(other.gameObject);
                 }
             }
-        }
-        if(other.gameObject.tag=="Enemy")
-        {
-            Debug.Log("trigger enter with enemy");
-            var enemyType = other.gameObject.GetComponent<BasicEnemy>(); 
-            if(enemyType.type=="Ghost")
-            {
-                Debug.Log("enemyType recognized : ghost");
-                health -= 1; 
-                Destroy(other.gameObject);
-            }//ghosts are destroyed upon impact of player
-            else
-            {
-                return;
-            }//return if not ghost as to not double damage fron ontriggerstay func
         }
 
 
