@@ -20,10 +20,17 @@ public class PlayerMove : MonoBehaviour
     public int keys = 0;
     public int storage = 10;
     // Update is called once per frame
+    //these are used to give characters unique inputs
+    public bool myup;
+    public bool mydown;
+    public bool myleft;
+    public bool myright;
+    public bool firing;
 
     public bool hasBomb=false;
-    public bool hasKey=false; 
-    void Update()
+    public bool hasKey=false;
+
+    public virtual void Update()
     {
         //basic setting up of rotation and movement;
         neweuler = transform.eulerAngles;
@@ -31,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         //this system creates a total of 12 raycasts, checking the top bottom and middle of the character for geometry. 
         //If it runs into anything that it can raycast hit, the player cannot move in said direction
         //as the player can attack through corner gaps, the player can face a wall, just not move into said wall.
-        if (Input.GetKey("w"))
+        if (myup)
         {
             shootdirection = "up";
             neweuler.y = 0;
@@ -42,7 +49,7 @@ public class PlayerMove : MonoBehaviour
 
             }
         }
-        if (Input.GetKey("s"))
+        if (mydown)
         {
             neweuler.y = 180;
             shootdirection = "down";
@@ -52,40 +59,40 @@ public class PlayerMove : MonoBehaviour
 
             }
         }
-        if (Input.GetKey("a"))
+        if (myleft)
         {
             neweuler.y = 270;
             shootdirection = "left";
             if (!Physics.Raycast(transform.position, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.left), speed + 0.5f))
             {
                 newpos.x -= speed;
-               
-                if (Input.GetKey("w"))
+
+                if (myup)
                 {
                     shootdirection = "uleft";
                     neweuler.y = 315;
                 }
-                if (Input.GetKey("s"))
+                if (mydown)
                 {
                     shootdirection = "dleft";
                     neweuler.y = 235;
                 }
             }
         }
-        if (Input.GetKey("d"))
+        if (myright)
         {
             neweuler.y = 90;
             shootdirection = "right";
             if (!Physics.Raycast(transform.position, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.right), speed + 0.5f))
             {
                 newpos.x += speed;
-               
-                if (Input.GetKey("w"))
+
+                if (myup)
                 {
                     shootdirection = "uright";
                     neweuler.y = 45;
                 }
-                if (Input.GetKey("s"))
+                if (mydown)
                 {
                     shootdirection = "dright";
                     neweuler.y = 135;
@@ -98,7 +105,7 @@ public class PlayerMove : MonoBehaviour
         transform.eulerAngles = neweuler;
         //when F is held, the player will rapidly shoot based on their direction.
         //their direction is set whenever they hit a movement key.
-        if (Input.GetKey("f"))
+        if (firing)
         {
             if (shootdirection == "up")
             {
@@ -133,6 +140,11 @@ public class PlayerMove : MonoBehaviour
                 Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
             }
         }
+        myup = false;
+        mydown = false;
+        myleft = false;
+        myright = false;
+        firing = false;
     }
     private void OnTriggerEnter(Collider other)
     {

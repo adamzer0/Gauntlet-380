@@ -63,20 +63,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Leaderboard.cs" />
-    <Compile Include="Assets\Scripts\BasicEnemy.cs" />
-    <Compile Include="Assets\Scripts\BulletMove.cs" />
-    <Compile Include="Assets\Scripts\DeathsAura.cs" />
-    <Compile Include="Assets\Scripts\Demon.cs" />
-    <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\Ghost.cs" />
-    <Compile Include="Assets\Scripts\Lobber.cs" />
-    <Compile Include="Assets\Scripts\LobberProjectile.cs" />
-    <Compile Include="Assets\Scripts\Pickup.cs" />
-    <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\Sorcerer.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BasicEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\DeathsAura.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Demon.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyProjectile.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Ghost.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Lobber.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LobberProjectile.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Sorcerer.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Thief.cs" />
+    <Compile Include="Assets\Scripts\Player\BulletMove.cs" />
+    <Compile Include="Assets\Scripts\Player\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\Player\Valkyrie.cs" />
+    <Compile Include="Assets\Scripts\Player\Warrior.cs" />
+    <Compile Include="Assets\Scripts\Player\Wizard.cs" />
     <Compile Include="Assets\Scripts\TestMe.cs" />
-    <Compile Include="Assets\Scripts\Thief.cs" />
     <Compile Include="Assets\TESTFILE.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/adam/Documents/GitHub/Gauntlet-380/Gauntlet Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -1,17 +1,6 @@
 ﻿<Properties StartupConfiguration="{4038D37F-14C0-68EA-4F82-8C2DFCBDA653}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BasicEnemy.cs">
-    <Files>
-      <File FileName="Assets/Scripts/BasicEnemy.cs" Line="17" Column="39" />
-      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="18" Column="18" />
-      <File FileName="Assets/Scripts/PlayerMove.cs" Line="171" Column="6" />
-      <File FileName="Assets/Scripts/Pickup.cs" Line="2" Column="34" />
-      <File FileName="Assets/Scripts/Sorcerer.cs" Line="35" Column="1" />
-      <File FileName="Assets/Scripts/Lobber.cs" Line="6" Column="2" />
-      <File FileName="Assets/Scripts/Demon.cs" Line="2" Column="34" />
-      <File FileName="Assets/Scripts/LobberProjectile.cs" Line="13" Column="2" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
