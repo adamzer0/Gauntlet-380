@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2672630285292643788}
   - component: {fileID: 2672630285292643791}
   - component: {fileID: 2672630285292643790}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Potion_Bomb
   m_TagString: Pickup
   m_Icon: {fileID: 0}

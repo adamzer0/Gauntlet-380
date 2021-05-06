@@ -98,6 +98,10 @@ public class BasicEnemy : MonoBehaviour
         transform.position = newpos;
         // if projectile enemy not delayed (instantiate projectile)
         //start firing delay coroutine
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -106,11 +110,8 @@ public class BasicEnemy : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             health -= 1;
+            
             Destroy(other.gameObject);
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
     }
 }
