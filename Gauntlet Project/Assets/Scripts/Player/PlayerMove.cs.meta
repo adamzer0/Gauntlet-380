@@ -3,7 +3,11 @@ guid: eeae7cba070ec4978b600d919f95403c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - projectile: {instanceID: 0}
+  - bigbomb: {fileID: 555493647825525572, guid: 6c006fbce60a44bb1ac8844ad0e8791f,
+      type: 3}
+  - meleeweapon: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

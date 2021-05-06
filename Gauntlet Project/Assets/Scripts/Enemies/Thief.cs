@@ -52,12 +52,9 @@ public class Thief : BasicEnemy
         }
         base.Update(); 
     }
-    private void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Collider other)
     {
-       if (other.gameObject.tag=="Bullet")
-        {
-            health -= 1; 
-        }
+       
         if(other.gameObject.tag=="Player")
         {
             player.GetComponent<PlayerMove>().health -= 10;
@@ -83,6 +80,6 @@ public class Thief : BasicEnemy
                 player.GetComponent<PlayerMove>().score -= randomVal;
             }
       }
-
+        base.OnTriggerEnter(other);
     }
 }

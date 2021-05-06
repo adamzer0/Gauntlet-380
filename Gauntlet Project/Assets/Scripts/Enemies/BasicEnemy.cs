@@ -103,15 +103,24 @@ public class BasicEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         //if you get hit, take damage.
         //if that damage is lethal, die.
         if (other.gameObject.tag == "Bullet")
         {
             health -= 1;
-            
+
             Destroy(other.gameObject);
+        }
+
+        if (other.tag == "Bomb")
+        {
+            health = 0;
+        }
+        if (other.tag == "Melee")
+        {
+            health -= 1;
         }
     }
 }

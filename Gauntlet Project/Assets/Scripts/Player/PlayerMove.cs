@@ -13,12 +13,21 @@ public class PlayerMove : MonoBehaviour
     private string shootdirection;
     //the projectile that the class shoots.
     public GameObject projectile;
-
+    public GameObject bigbomb;
+    public GameObject meleeweapon;
+    //health drains slowly
+    public int healthlosstimermax = 30;
+    public int healthlosstimer = 30;
+    //health
     public int health = 600;
     public int score = 0;
     public int bombs = 0;
     public int keys = 0;
+    //max storage for bombs and keys
     public int storage = 10;
+
+
+
     // Update is called once per frame
     //these are used to give characters unique inputs
     public bool myup;
@@ -26,12 +35,19 @@ public class PlayerMove : MonoBehaviour
     public bool myleft;
     public bool myright;
     public bool firing;
+    public bool usebomb;
+    public bool melee;
 
-    public bool hasBomb=false;
-    public bool hasKey=false;
+
 
     public virtual void Update()
     {
+        healthlosstimer -= 1;
+        if (healthlosstimer <= 0)
+        {
+            health -= 1;
+            healthlosstimer = healthlosstimermax;
+        }
         //basic setting up of rotation and movement;
         neweuler = transform.eulerAngles;
         newpos = transform.position;
@@ -42,7 +58,7 @@ public class PlayerMove : MonoBehaviour
         {
             shootdirection = "up";
             neweuler.y = 0;
-            if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position+ Vector3.right/2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position+ Vector3.left/2, (Vector3.forward), speed + 0.5f))
+            if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
             {
                 newpos.z += speed;
 
@@ -107,6 +123,8 @@ public class PlayerMove : MonoBehaviour
         //their direction is set whenever they hit a movement key.
         if (firing)
         {
+
+
             if (shootdirection == "up")
             {
                 Instantiate(projectile, transform.position + Vector3.forward, transform.rotation);
@@ -139,12 +157,73 @@ public class PlayerMove : MonoBehaviour
             {
                 Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
             }
+
+            //dont let the player fire a beam;
+
+            firing = false;
         }
+        if (melee)
+        {
+
+
+            if (shootdirection == "up")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.forward, transform.rotation);
+            }
+            if (shootdirection == "down")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.back, transform.rotation);
+            }
+            if (shootdirection == "left")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.left, transform.rotation);
+            }
+            if (shootdirection == "right")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.right, transform.rotation);
+            }
+            if (shootdirection == "uright")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.right + Vector3.forward, transform.rotation);
+            }
+            if (shootdirection == "dright")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.right + Vector3.back, transform.rotation);
+            }
+            if (shootdirection == "uleft")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.left + Vector3.forward, transform.rotation);
+            }
+            if (shootdirection == "dleft")
+            {
+                Instantiate(meleeweapon, transform.position + Vector3.left + Vector3.down, transform.rotation);
+            }
+
+            //dont let the player fire a beam;
+
+            melee = false;
+        }
+        //when you're using a bomb, it kills everything on screen
+        if (usebomb && bombs >= 1)
+        {
+
+
+            bombs -= 1;
+            storage += 1;
+            Instantiate(bigbomb, transform.position, transform.rotation);
+            usebomb = false;
+
+            //prevent multiple bombs from being used at once
+
+
+        }
+        //this removes all inputs, as inputs are declared in another script
         myup = false;
         mydown = false;
         myleft = false;
         myright = false;
-        firing = false;
+        //let the player fire again
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -165,25 +244,34 @@ public class PlayerMove : MonoBehaviour
                 Destroy(other.gameObject);
             }
             //bombs and keys may only be picked up if you have room.
+            //if you dont you wont pick them up
             if (storage >= 1)
             {
                 if (picktype.type == "Bomb")
                 {
                     storage -= 1;
                     bombs += 1;
-                    hasBomb = true;
+
                     Destroy(other.gameObject);
                 }
                 if (picktype.type == "Key")
                 {
                     keys += 1;
                     storage -= 1;
-                    hasKey = true;
+
                     Destroy(other.gameObject);
                 }
             }
         }
-
+        if (other.gameObject.tag == "Door")
+        {
+            if (keys >= 1)
+            {
+                keys -= 1;
+                storage += 1;
+                Destroy(other.gameObject);
+            }
+        }
 
     }
     private void OnTriggerStay(Collider other)

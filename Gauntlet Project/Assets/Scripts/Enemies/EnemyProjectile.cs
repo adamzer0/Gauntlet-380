@@ -9,7 +9,7 @@ public class EnemyProjectile : MonoBehaviour
     //this projectile goes forward every frame by its speed.
     public void Update()
     {
-        transform.Translate(transform.forward * speed);
+        transform.Translate(Vector3.forward * speed);
     }
     //when it hits a wall it dissapates.
     public virtual void OnTriggerEnter(Collider other)

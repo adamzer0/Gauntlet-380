@@ -106,3 +106,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Bomb
   amount: 100
+  smallbomb: {fileID: 8644668592211417509, guid: df2ab8eb6736f4a69bffe6f782d752db,
+    type: 3}

@@ -23,9 +23,17 @@ public class Warrior : PlayerMove
         {
             myleft = true;
         }
-        if (Input.GetKey("f"))
+        if (Input.GetKeyDown("f"))
         {
             firing = true;
+        }
+        if (Input.GetKeyDown("q"))
+        {
+            usebomb = true;
+        }
+        if (Input.GetKeyDown("x"))
+        {
+            melee = true;
         }
         base.Update();
     }
