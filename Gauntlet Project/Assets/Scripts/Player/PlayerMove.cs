@@ -16,6 +16,10 @@ public class PlayerMove : MonoBehaviour
     public GameObject projectile;
     public GameObject bigbomb;
     public GameObject meleeweapon;
+    //for dontdestroyonreload
+    public GameObject spawner;
+    public GameObject Cam;
+
     //health drains slowly
     public int healthlosstimermax = 30;
     public int healthlosstimer = 30;
@@ -41,7 +45,14 @@ public class PlayerMove : MonoBehaviour
     public bool usebomb;
     public bool melee;
 
-   
+    private void Awake()
+    {
+        spawner = GameObject.FindWithTag("Spawner");
+        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(spawner.gameObject);
+        Cam = GameObject.FindWithTag("MainCamera");
+        DontDestroyOnLoad(Cam.gameObject);
+    }
 
     public virtual void Update()
     {
@@ -285,6 +296,11 @@ public class PlayerMove : MonoBehaviour
             var sceneman = other.GetComponent<Stairs>();
             SceneManager.LoadScene(sceneman.nextlevel);
 
+        }
+        if (other.gameObject.tag == "Transfer")
+        {
+            var moveto = other.GetComponent<Teleporter>();
+            transform.position = moveto.startpos;
         }
 
     }

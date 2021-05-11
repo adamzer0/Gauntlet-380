@@ -5,4 +5,5 @@ using UnityEngine.SceneManagement;
 public class Stairs : MonoBehaviour
 {
     public string nextlevel = "Level_2";
+   
 }

@@ -8,9 +8,9 @@ public class Warrior : PlayerMove
     public override void Update()
     {
     
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey("w"))
         {
-    //        myup = true;
+           myup = true;
             Debug.Log("warriod update W");
         }
         if (Input.GetKey("s"))
@@ -40,7 +40,7 @@ public class Warrior : PlayerMove
         {
             melee = true;
         }
-       // base.Update();
+       base.Update();
     }
 
 }

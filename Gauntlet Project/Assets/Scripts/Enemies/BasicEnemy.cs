@@ -14,9 +14,11 @@ public class BasicEnemy : MonoBehaviour
 
 
 
+
     // Update is called once per frame
     public virtual void Awake()
     {
+       
         player = GameObject.FindWithTag("Player");
     }
     public virtual void Update()

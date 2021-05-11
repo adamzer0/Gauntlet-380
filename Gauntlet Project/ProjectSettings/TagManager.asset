@@ -10,6 +10,10 @@ TagManager:
   - Pickup
   - Drained
   - Thief
+  - Exit
+  - Bomb
+  - Transfer
+  - Spawner
   layers:
   - Default
   - TransparentFX
