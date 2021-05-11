@@ -7,21 +7,26 @@ public class Warrior : PlayerMove
    
     public override void Update()
     {
-        if  (Input.GetKey("w"))
+    
+        if (Input.GetKey(KeyCode.Space))
         {
-            myup = true;
+    //        myup = true;
+            Debug.Log("warriod update W");
         }
         if (Input.GetKey("s"))
         {
             mydown = true;
+            Debug.Log("warriod update S");
         }
         if (Input.GetKey("d"))
         {
+            Debug.Log("warriod update D");
             myright = true;
         }
         if (Input.GetKey("a"))
         {
             myleft = true;
+            Debug.Log("warriod update A");
         }
         if (Input.GetKeyDown("f"))
         {
@@ -35,7 +40,7 @@ public class Warrior : PlayerMove
         {
             melee = true;
         }
-        base.Update();
+       // base.Update();
     }
 
 }

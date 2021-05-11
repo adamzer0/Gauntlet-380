@@ -6,7 +6,7 @@ public class Valkyrie : PlayerMove
 {
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         if (Input.GetAxis("VerticalV") >= 0.5)
         {
