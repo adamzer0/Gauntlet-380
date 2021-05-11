@@ -1,34 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
-   /* PlayerControls controls;
-
-     void Awake()
-    {
-        controls= new PlayerControls();
-
-        controls.Gameplay.Grow.performed += ctx => Grow(); 
-    }
-
-    void Grow()
-    {
-        transform.localScale *= 1.1f;    
-    }
-
-    void OnEnable()
-    {
-        controls.Gameplay.Enable();     
-    }
-
-    private void OnDisable()
-    {
-        
-    }
-   */
     //new position and direction for movement
     public Vector3 newpos;
     public Vector3 neweuler;
@@ -50,8 +26,10 @@ public class PlayerMove : MonoBehaviour
     public int keys = 0;
     //max storage for bombs and keys
     public int storage = 10;
-
-
+    //this will prevent you from using multiple keys on the same door.
+    public int unlockdoor = 0;
+   
+   
 
     // Update is called once per frame
     //these are used to give characters unique inputs
@@ -63,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     public bool usebomb;
     public bool melee;
 
-
+   
 
     public virtual void Update()
     {
@@ -83,7 +61,7 @@ public class PlayerMove : MonoBehaviour
         {
             shootdirection = "up";
             neweuler.y = 0;
-            if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
+            if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position+ Vector3.right/2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position+ Vector3.left/2, (Vector3.forward), speed + 0.5f))
             {
                 newpos.z += speed;
 
@@ -149,40 +127,40 @@ public class PlayerMove : MonoBehaviour
         if (firing)
         {
 
-
-            if (shootdirection == "up")
-            {
-                Instantiate(projectile, transform.position + Vector3.forward, transform.rotation);
-            }
-            if (shootdirection == "down")
-            {
-                Instantiate(projectile, transform.position + Vector3.back, transform.rotation);
-            }
-            if (shootdirection == "left")
-            {
-                Instantiate(projectile, transform.position + Vector3.left, transform.rotation);
-            }
-            if (shootdirection == "right")
-            {
-                Instantiate(projectile, transform.position + Vector3.right, transform.rotation);
-            }
-            if (shootdirection == "uright")
-            {
-                Instantiate(projectile, transform.position + Vector3.right + Vector3.forward, transform.rotation);
-            }
-            if (shootdirection == "dright")
-            {
-                Instantiate(projectile, transform.position + Vector3.right + Vector3.back, transform.rotation);
-            }
-            if (shootdirection == "uleft")
-            {
-                Instantiate(projectile, transform.position + Vector3.left + Vector3.forward, transform.rotation);
-            }
-            if (shootdirection == "dleft")
-            {
-                Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
-            }
-
+           
+                if (shootdirection == "up")
+                {
+                    Instantiate(projectile, transform.position + Vector3.forward, transform.rotation);
+                }
+                if (shootdirection == "down")
+                {
+                    Instantiate(projectile, transform.position + Vector3.back, transform.rotation);
+                }
+                if (shootdirection == "left")
+                {
+                    Instantiate(projectile, transform.position + Vector3.left, transform.rotation);
+                }
+                if (shootdirection == "right")
+                {
+                    Instantiate(projectile, transform.position + Vector3.right, transform.rotation);
+                }
+                if (shootdirection == "uright")
+                {
+                    Instantiate(projectile, transform.position + Vector3.right + Vector3.forward, transform.rotation);
+                }
+                if (shootdirection == "dright")
+                {
+                    Instantiate(projectile, transform.position + Vector3.right + Vector3.back, transform.rotation);
+                }
+                if (shootdirection == "uleft")
+                {
+                    Instantiate(projectile, transform.position + Vector3.left + Vector3.forward, transform.rotation);
+                }
+                if (shootdirection == "dleft")
+                {
+                    Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
+                }
+           
             //dont let the player fire a beam;
 
             firing = false;
@@ -231,15 +209,15 @@ public class PlayerMove : MonoBehaviour
         //when you're using a bomb, it kills everything on screen
         if (usebomb && bombs >= 1)
         {
-
-
-            bombs -= 1;
-            storage += 1;
-            Instantiate(bigbomb, transform.position, transform.rotation);
-            usebomb = false;
+           
+           
+                bombs -= 1;
+                storage += 1;
+                Instantiate(bigbomb, transform.position, transform.rotation);
+                usebomb = false;
 
             //prevent multiple bombs from being used at once
-
+          
 
         }
         //this removes all inputs, as inputs are declared in another script
@@ -247,8 +225,12 @@ public class PlayerMove : MonoBehaviour
         mydown = false;
         myleft = false;
         myright = false;
+        if (unlockdoor >= 0)
+        {
+            unlockdoor -= 1;
+        }
         //let the player fire again
-
+       
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -290,12 +272,19 @@ public class PlayerMove : MonoBehaviour
         }
         if (other.gameObject.tag == "Door")
         {
-            if (keys >= 1)
+            if (keys >= 1 && unlockdoor <= 0)
             {
                 keys -= 1;
                 storage += 1;
-                Destroy(other.gameObject);
+                Destroy(other.transform.parent.gameObject);
+                unlockdoor = 2;
             }
+        }
+        if (other.gameObject.tag == "Exit")
+        {
+            var sceneman = other.GetComponent<Stairs>();
+            SceneManager.LoadScene(sceneman.nextlevel);
+
         }
 
     }
@@ -307,4 +296,5 @@ public class PlayerMove : MonoBehaviour
             health -= 1;
         }
     }
+
 }

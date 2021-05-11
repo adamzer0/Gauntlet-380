@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerMove.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerMove.cs" Line="246" Column="17" />
+      <File FileName="Assets/Scripts/Player/PlayerMove.cs" Line="25" Column="20" />
       <File FileName="Assets/Scripts/Enemies/BasicEnemy.cs" Line="115" Column="10" />
       <File FileName="Assets/Scripts/Player/Pickup.cs" Line="25" Column="17" />
       <File FileName="Assets/Scripts/Player/Warrior.cs" Line="23" Column="10" />
