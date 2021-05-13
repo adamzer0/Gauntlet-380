@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6645979125553753248}
   - component: {fileID: 6645979125553753249}
   - component: {fileID: 6645979125553753250}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,8 +102,8 @@ GameObject:
   - component: {fileID: 6645979125879766190}
   - component: {fileID: 6645979125879766191}
   - component: {fileID: 6645979125879766184}
-  - component: {fileID: 6645979125879766185}
   - component: {fileID: 6645979125879766186}
+  - component: {fileID: 6634106027975871936}
   m_Layer: 0
   m_Name: Sorcerer
   m_TagString: Untagged
@@ -174,20 +174,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6645979125879766185
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6645979125879766187}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6645979125879766186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +193,19 @@ MonoBehaviour:
   health: 2
   c: {r: 0, g: 0, b: 0, a: 0}
   invisturn: 150
+--- !u!65 &6634106027975871936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645979125879766187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 2, z: 1.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6645979126352261374
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +218,7 @@ GameObject:
   - component: {fileID: 6645979126352261363}
   - component: {fileID: 6645979126352261372}
   - component: {fileID: 6645979126352261373}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +309,7 @@ GameObject:
   - component: {fileID: 6645979126987982925}
   - component: {fileID: 6645979126987982926}
   - component: {fileID: 6645979126987982927}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +400,7 @@ GameObject:
   - component: {fileID: 6645979127172950270}
   - component: {fileID: 6645979127172950271}
   - component: {fileID: 6645979127172950264}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

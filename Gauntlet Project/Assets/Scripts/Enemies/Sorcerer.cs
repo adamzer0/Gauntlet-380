@@ -14,10 +14,11 @@ public class Sorcerer : BasicEnemy
     //this sets how long it will be invisible for
     public int invisturn = 150;
     // Update is called once per frame
-    public void Awake()
+    public override void Awake()
     {
         base.Awake();
         c = GetComponent<Renderer>().material.color;
+
     }
     public override void Update()
     {

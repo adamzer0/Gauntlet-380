@@ -7,6 +7,7 @@ public class BasicEnemy : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject player;
+    //movement based
     public Vector3 newpos;
     public Vector3 neweuler;
     public float speed = 0.03f;
@@ -23,87 +24,91 @@ public class BasicEnemy : MonoBehaviour
     }
     public virtual void Update()
     {
-        newpos = transform.position;
-        neweuler = transform.eulerAngles;
-        var playpos = player.GetComponent<PlayerMove>();
-        if (playpos.transform.position.z > transform.position.z +0.3f)
-        {
 
-            if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
+            //set up position and eulers. based on the target player's position
+            //this entity will
+            newpos = transform.position;
+            neweuler = transform.eulerAngles;
+            var playpos = player.GetComponent<PlayerMove>();
+            if (playpos.transform.position.z > transform.position.z + 0.3f)
             {
-                newpos.z += speed;
-                neweuler.y = 0;
 
-            }
-        }
-        if (playpos.transform.position.z < transform.position.z - 0.3f)
-        {
-
-            if (!Physics.Raycast(transform.position, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.back), speed + 0.5f))
-            {
-                newpos.z -= speed;
-                neweuler.y = 180;
-               
-            }
-        }
-        if (playpos.transform.position.x < transform.position.x -0.3f)
-        {
-
-            if (!Physics.Raycast(transform.position, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.left), speed + 0.5f))
-            {
-                newpos.x -= speed;
-
-
-                if (neweuler.y >= -5 && neweuler.y <= 5)
+                if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
                 {
+                    newpos.z += speed;
+                    neweuler.y = 0;
 
-                    neweuler.y = 315;
-                }
-                else if (neweuler.y >= 175 && neweuler.y <= 185)
-                {
-                   
-                    neweuler.y = 235;
-                    
-                }
-                else
-                {
-                    neweuler.y = 270;
                 }
             }
-        }
-        if (playpos.transform.position.x > transform.position.x + 0.3f)
-        {
-
-            if (!Physics.Raycast(transform.position, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.right), speed + 0.5f))
+            if (playpos.transform.position.z < transform.position.z - 0.3f)
             {
-                newpos.x += speed;
-               
-              
-                if (neweuler.y >= -5 && neweuler.y <= 5)
-                {
 
-                    neweuler.y = 45;
-                }
-                else if (neweuler.y >= 175 && neweuler.y <= 185)
+                if (!Physics.Raycast(transform.position, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.back), speed + 0.5f))
                 {
-                   
-                    neweuler.y = 135;
-                }
-                else
-                {
-                    neweuler.y = 90;
-                }
+                    newpos.z -= speed;
+                    neweuler.y = 180;
 
+                }
             }
-        }
-        transform.eulerAngles = neweuler;
-        transform.position = newpos;
-        // if projectile enemy not delayed (instantiate projectile)
-        //start firing delay coroutine
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+            if (playpos.transform.position.x < transform.position.x - 0.3f)
+            {
+
+                if (!Physics.Raycast(transform.position, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.left), speed + 0.5f))
+                {
+                    newpos.x -= speed;
+
+
+                    if (neweuler.y >= -5 && neweuler.y <= 5)
+                    {
+
+                        neweuler.y = 315;
+                    }
+                    else if (neweuler.y >= 175 && neweuler.y <= 185)
+                    {
+
+                        neweuler.y = 235;
+
+                    }
+                    else
+                    {
+                        neweuler.y = 270;
+                    }
+                }
+            }
+            if (playpos.transform.position.x > transform.position.x + 0.3f)
+            {
+
+                if (!Physics.Raycast(transform.position, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.right), speed + 0.5f))
+                {
+                    newpos.x += speed;
+
+
+                    if (neweuler.y >= -5 && neweuler.y <= 5)
+                    {
+
+                        neweuler.y = 45;
+                    }
+                    else if (neweuler.y >= 175 && neweuler.y <= 185)
+                    {
+
+                        neweuler.y = 135;
+                    }
+                    else
+                    {
+                        neweuler.y = 90;
+                    }
+
+                }
+            }
+            transform.eulerAngles = neweuler;
+            transform.position = newpos;
+            // if projectile enemy not delayed (instantiate projectile)
+            //start firing delay coroutine
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        
     }
     public virtual void OnTriggerEnter(Collider other)
     {
@@ -111,14 +116,17 @@ public class BasicEnemy : MonoBehaviour
         //if that damage is lethal, die.
         if (other.gameObject.tag == "Bullet")
         {
-            health -= 1;
+            var bulletdmg = other.GetComponent<BulletMove>();
+            health -= bulletdmg.damage;
 
             Destroy(other.gameObject);
         }
 
         if (other.tag == "Bomb")
         {
-            health = 0;
+            var bombdmg = other.GetComponent<RemoveSelf>();
+            health -= bombdmg.mypower;
+           
         }
         if (other.tag == "Melee")
         {

@@ -8,10 +8,12 @@ public class RemoveSelf : MonoBehaviour
     //after 2 ticks, giving everything a chance
     //to die to it.
     public int removedelay = 3;
-   
+    //for bombs
+    public int mypower = 1;
     void Update()
     {
         removedelay -= 1;
+       
         if (removedelay <= 0)
         {
             Destroy(gameObject);

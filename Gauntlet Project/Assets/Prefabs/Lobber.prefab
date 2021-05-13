@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8937658344433870169}
   - component: {fileID: 8937658344433870168}
   - component: {fileID: 8937658344433870167}
-  - component: {fileID: 8937658344433870166}
   - component: {fileID: 8937658344433870165}
+  - component: {fileID: 1870505063824299104}
   m_Layer: 0
   m_Name: Lobber
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,20 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8937658344433870166
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8937658344433870164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &8937658344433870165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +96,23 @@ MonoBehaviour:
   newpos: {x: 0, y: 0, z: 0}
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
-  health: 0
+  health: 1
   shootdelaymax: 50
   lobberprojectile: {fileID: 6434496826205815586, guid: c545ce3eca63e4e02b1ee62eefb6d144,
     type: 3}
+--- !u!65 &1870505063824299104
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937658344433870164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 2, z: 1.05}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &8937658345144558470
 GameObject:
   m_ObjectHideFlags: 0

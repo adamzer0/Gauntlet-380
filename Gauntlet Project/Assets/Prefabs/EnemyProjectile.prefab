@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5218505755764084190}
   - component: {fileID: 5218505755764084191}
   - component: {fileID: 5218505755764084188}
+  - component: {fileID: 8103601694037725413}
   m_Layer: 2
   m_Name: EnemyProjectile
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +88,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5218505755764084189}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -105,3 +106,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+--- !u!114 &8103601694037725413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218505755764084189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c34bb769e6b4c159ce570d3110e50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  removedelay: 300
+  mypower: 1

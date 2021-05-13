@@ -8,6 +8,7 @@ public class BulletMove : MonoBehaviour
     public float speed = 0.5f;
     //how long the projectile exists for.
     public int lifespan = 30;
+    public int damage = 1;
     
 
     // Update is called once per frame

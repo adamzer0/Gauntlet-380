@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Level_0.unity
+    guid: 3e4a984a65b12420288027c490499c9a
+  - enabled: 1
     path: Assets/Scenes/Level_1.unity
     guid: 6c338a300aea64dc783a2a0d7aaf51d1
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
     guid: 6bac0fe1e09d04af3ac7b86ec78a1109
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: c3b57621a1a204fd1a39d0c31a28902d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: edd2a48589d7b4f7d9bfeb1738d8fec2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c75ac64686f210548b705c509c0a9e31,
       type: 2}
