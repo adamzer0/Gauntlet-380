@@ -11,22 +11,22 @@ public class Warrior : PlayerMove
         if (Input.GetKey("w"))
         {
            myup = true;
-            Debug.Log("warriod update W");
+         
         }
         if (Input.GetKey("s"))
         {
             mydown = true;
-            Debug.Log("warriod update S");
+  
         }
         if (Input.GetKey("d"))
         {
-            Debug.Log("warriod update D");
+   
             myright = true;
         }
         if (Input.GetKey("a"))
         {
             myleft = true;
-            Debug.Log("warriod update A");
+
         }
         if (Input.GetKeyDown("f"))
         {

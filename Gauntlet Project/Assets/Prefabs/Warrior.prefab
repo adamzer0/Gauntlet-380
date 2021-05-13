@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6268693150831924826}
   - component: {fileID: 6268693150831924821}
   - component: {fileID: 6268693150831924824}
-  - component: {fileID: 7713884467084250154}
-  - component: {fileID: 4015404458993699250}
+  - component: {fileID: 6268693150831924823}
+  - component: {fileID: 1365465473539423032}
   m_Layer: 0
-  m_Name: Player 2
+  m_Name: Warrior
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 436ac097993aa7846b118be13b4855fe, type: 2}
+  - {fileID: 2100000, guid: e5faa5794ab5b8041bc6d8ab1b9421b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &7713884467084250154
+--- !u!114 &6268693150831924823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6268693150831924822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2fbc7aa3e4ab4ae0881a6c0a76f87bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 63fad52c5505244bdb48f3c379ef9fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newpos: {x: 0, y: 0, z: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   projectile: {fileID: 2538162396475554820, guid: 2352b5300ce034366b815afd75c73722,
     type: 3}
   bigbomb: {fileID: 555493647825525572, guid: 6c006fbce60a44bb1ac8844ad0e8791f, type: 3}
-  meleeweapon: {fileID: 8644668592211417509, guid: df2ab8eb6736f4a69bffe6f782d752db,
+  meleeweapon: {fileID: 3043641318067633913, guid: 6ff6669e5acdf4d3794a753b66ca145e,
     type: 3}
   spawner: {fileID: 0}
   Cam: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   firing: 0
   usebomb: 0
   melee: 0
---- !u!65 &4015404458993699250
+--- !u!65 &1365465473539423032
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

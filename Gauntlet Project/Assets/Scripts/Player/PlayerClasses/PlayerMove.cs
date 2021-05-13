@@ -85,6 +85,7 @@ public class PlayerMove : MonoBehaviour
             //as the player can attack through corner gaps, the player can face a wall, just not move into said wall.
             if (myup)
             {
+                Debug.Log("my up is true");
                 shootdirection = "up";
                 neweuler.y = 0;
                 if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))

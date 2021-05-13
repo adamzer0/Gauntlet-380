@@ -486,9 +486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 6268693150831924822, guid: 4a4e8913eb424674381daad83524cc52, type: 3}
-  player2: {fileID: 6268693150831924822, guid: caa12456db8e849f295184d53b34d5f2, type: 3}
+  player2: {fileID: 4157500456435486060, guid: 9245168fcda4cab45b397750714ee93f, type: 3}
   player3: {fileID: 6268693150831924822, guid: caa12456db8e849f295184d53b34d5f2, type: 3}
-  player4: {fileID: 6268693150831924822, guid: caa12456db8e849f295184d53b34d5f2, type: 3}
+  player4: {fileID: 5458157277190972361, guid: 313082c7d7559af4a8d1e67371b880bd, type: 3}
   target: {fileID: 0}
   camera: {fileID: 1090515926}
   play1exist: 0
