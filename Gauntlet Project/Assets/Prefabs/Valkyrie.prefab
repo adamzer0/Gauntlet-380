@@ -125,12 +125,12 @@ MonoBehaviour:
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.1
   bombdamage: 1
-  armor: 0
+  armor: 3
   bulletdamage: 1
   projectile: {fileID: 2538162396475554820, guid: 2352b5300ce034366b815afd75c73722,
     type: 3}
   bigbomb: {fileID: 555493647825525572, guid: 6c006fbce60a44bb1ac8844ad0e8791f, type: 3}
-  meleeweapon: {fileID: 8644668592211417509, guid: df2ab8eb6736f4a69bffe6f782d752db,
+  meleeweapon: {fileID: 3043641318067633913, guid: 6ff6669e5acdf4d3794a753b66ca145e,
     type: 3}
   spawner: {fileID: 0}
   Cam: {fileID: 0}

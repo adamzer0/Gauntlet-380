@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Player\Stairs.cs" />
     <Compile Include="Assets\Scripts\Player\Teleporter.cs" />
     <Compile Include="Assets\Scripts\TestMe.cs" />
+    <Compile Include="Assets\Scripts\UIDisplay.cs" />
     <Compile Include="Assets\TESTFILE.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Documents/GitHub/Gauntlet-380/Gauntlet Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

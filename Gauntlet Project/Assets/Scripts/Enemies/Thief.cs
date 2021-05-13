@@ -78,6 +78,7 @@ public class Thief : BasicEnemy
                 randomVal = Random.Range(1, 101);
                 stole = true;
                 player.GetComponent<PlayerMove>().score -= randomVal;
+           
             }
       }
         base.OnTriggerEnter(other);

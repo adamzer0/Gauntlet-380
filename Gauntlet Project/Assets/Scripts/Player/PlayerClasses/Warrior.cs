@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Warrior : PlayerMove
 {
-   
+   //WARRIOR USES WASD
     public override void Update()
     {
     
@@ -36,7 +36,7 @@ public class Warrior : PlayerMove
         {
             usebomb = true;
         }
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("e"))
         {
             melee = true;
         }

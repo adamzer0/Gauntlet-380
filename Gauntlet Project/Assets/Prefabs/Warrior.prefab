@@ -117,7 +117,7 @@ MonoBehaviour:
   projectile: {fileID: 2538162396475554820, guid: 2352b5300ce034366b815afd75c73722,
     type: 3}
   bigbomb: {fileID: 555493647825525572, guid: 6c006fbce60a44bb1ac8844ad0e8791f, type: 3}
-  meleeweapon: {fileID: 3043641318067633913, guid: 6ff6669e5acdf4d3794a753b66ca145e,
+  meleeweapon: {fileID: 7549613021595780712, guid: c5c3d7006c69aff4f9166420fb02105e,
     type: 3}
   spawner: {fileID: 0}
   Cam: {fileID: 0}

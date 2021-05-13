@@ -132,5 +132,9 @@ public class BasicEnemy : MonoBehaviour
         {
             health -= 1;
         }
+        if (other.tag == "WMelee")
+        {
+            health -= 3;
+        }
     }
 }

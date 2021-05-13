@@ -16,6 +16,9 @@ TagManager:
   - Spawner
   - EnemyBullet
   - Death
+  - Melee
+  - Door
+  - WMelee
   layers:
   - Default
   - TransparentFX

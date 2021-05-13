@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -28,10 +29,13 @@ public class PlayerMove : MonoBehaviour
 
 
     //health drains slowly
+    public bool playerSpawned = false; 
     public int healthlosstimermax = 30;
     public int healthlosstimer = 30;
     //health
+    public static int Uhealth = 600;
     public int health = 600;
+    public static int Uscore = 0;
     public int score = 0;
     public int bombs = 0;
     public int keys = 0;
@@ -39,8 +43,7 @@ public class PlayerMove : MonoBehaviour
     public int storage = 10;
     //this will prevent you from using multiple keys on the same door.
     public int unlockdoor = 0;
-   
-   
+
 
     //to prevent a bug, myright is true.
     //without this fix, bullets fired before moving go the wrong direction
@@ -54,6 +57,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
+        playerSpawned = true; 
         spawner = GameObject.FindWithTag("Spawner");
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(spawner.gameObject);
@@ -71,7 +75,10 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            healthlosstimer -= 1;
+            if (playerSpawned == true)
+            {
+                healthlosstimer -= 1;
+            }//health only drains once player enters the game
             if (healthlosstimer <= 0)
             {
                 health -= 1;
@@ -85,7 +92,6 @@ public class PlayerMove : MonoBehaviour
             //as the player can attack through corner gaps, the player can face a wall, just not move into said wall.
             if (myup)
             {
-                Debug.Log("my up is true");
                 shootdirection = "up";
                 neweuler.y = 0;
                 if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
@@ -261,6 +267,11 @@ public class PlayerMove : MonoBehaviour
             }
             //let the player fire again
         }
+        
+    }
+    private void LateUpdate()
+    {
+        equalize();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -356,4 +367,9 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    void equalize()
+    {
+        Uhealth = health;
+        Uscore = score;
+    }
 }

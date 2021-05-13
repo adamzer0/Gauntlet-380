@@ -6,31 +6,31 @@ public class Elf : PlayerMove
 {
     public override void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey("i"))
         {
             myup = true;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey("k"))
         {
             mydown = true;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey("l"))
         {
             myright = true;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey("j"))
         {
             myleft = true;
         }
-        if (Input.GetKeyDown("g"))
+        if (Input.GetKeyDown("p"))
         {
             firing = true;
         }
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("u"))
         {
             usebomb = true;
         }
-        if (Input.GetKeyDown("t"))
+        if (Input.GetKeyDown("h"))
         {
             melee = true;
         }

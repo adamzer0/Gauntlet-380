@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Wizard : PlayerMove
 {
+    //WIZARD USES ARROW KEYS
 
+    
     public override void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
