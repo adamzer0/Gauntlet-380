@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5218505755764084191}
   - component: {fileID: 5218505755764084188}
   - component: {fileID: 8103601694037725413}
+  - component: {fileID: -1398245847368355892}
   m_Layer: 2
   m_Name: EnemyProjectile
   m_TagString: EnemyBullet
@@ -119,4 +120,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removedelay: 300
+  myowner: {fileID: 0}
   mypower: 1
+--- !u!54 &-1398245847368355892
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218505755764084189}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

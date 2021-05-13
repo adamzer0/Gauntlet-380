@@ -19,7 +19,7 @@ public class UIDisplay : MonoBehaviour
     public Text stE;
 
 
-    private void Update()
+   /* private void Update()
     {
         stWA.text = "Score  " + Warrior.Uscore.ToString();
         htWA.text = "Health  " + Warrior.Uhealth.ToString();
@@ -32,5 +32,5 @@ public class UIDisplay : MonoBehaviour
 
         stE.text = "Score  " + Elf.Uscore.ToString();
         htE.text = "Health  " + Elf.Uhealth.ToString();
-    }
+    }*/
 }

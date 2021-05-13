@@ -30,5 +30,9 @@ public class BulletMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Door")
+        {
+            Destroy(gameObject);
+        }
     }
 }

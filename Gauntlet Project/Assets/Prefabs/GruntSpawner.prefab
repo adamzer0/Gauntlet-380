@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7649df809c434c70ae9d4f22c572308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxspawndelay: 100
+  maxspawndelay: 50
   spawntype: {fileID: 748423031772996432, guid: 7be7086c14db0c942907303f90f9d5f2,
     type: 3}
-  health: 100
+  health: 5
   myscale: {x: 0, y: 0, z: 0}

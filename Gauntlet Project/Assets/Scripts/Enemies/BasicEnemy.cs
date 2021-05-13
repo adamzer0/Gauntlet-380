@@ -13,6 +13,8 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 0.03f;
     public int health;
 
+    public int scoregive;
+
 
 
 
@@ -106,6 +108,8 @@ public class BasicEnemy : MonoBehaviour
             //start firing delay coroutine
             if (health <= 0)
             {
+                var givescore = player.GetComponent<PlayerMove>();
+                givescore.score += scoregive;
                 Destroy(gameObject);
             }
         
@@ -117,7 +121,10 @@ public class BasicEnemy : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             var bulletdmg = other.GetComponent<BulletMove>();
+            var bulletowner = other.GetComponent<RemoveSelf>();
+            player = bulletowner.myowner;
             health -= bulletdmg.damage;
+            
 
             Destroy(other.gameObject);
         }
@@ -126,10 +133,16 @@ public class BasicEnemy : MonoBehaviour
         {
             var bombdmg = other.GetComponent<RemoveSelf>();
             health -= bombdmg.mypower;
+            if (bombdmg.myowner != null)
+            {
+                player = bombdmg.myowner;
+            }
            
         }
         if (other.tag == "Melee")
         {
+            var bulletowner = other.GetComponent<RemoveSelf>();
+            player = bulletowner.myowner;
             health -= 1;
         }
         if (other.tag == "WMelee")

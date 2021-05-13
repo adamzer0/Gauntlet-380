@@ -105,10 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7649df809c434c70ae9d4f22c572308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxspawndelay: 100
+  maxspawndelay: 40
   spawntype: {fileID: 7942328970858463595, guid: 1dc4c8e6a33be34469c4af8b9ff1b72e,
     type: 3}
-  health: 100
+  health: 5
   myscale: {x: 0, y: 0, z: 0}
 --- !u!1 &4924663177599228012
 GameObject:

@@ -190,10 +190,12 @@ public class PlayerMove : MonoBehaviour
                 }
                 if (shootdirection == "dleft")
                 {
-                    mylastbullet = Instantiate(projectile, transform.position + Vector3.left + Vector3.down, transform.rotation);
+                    mylastbullet = Instantiate(projectile, transform.position + Vector3.left + Vector3.back, transform.rotation);
                 }
                 var lastshot = mylastbullet.GetComponent<BulletMove>();
                 lastshot.damage = bulletdamage;
+                var shotowner = mylastbullet.GetComponent<RemoveSelf>();
+                shotowner.myowner = gameObject;
 
                 //dont let the player fire a beam;
 
@@ -205,37 +207,38 @@ public class PlayerMove : MonoBehaviour
 
                 if (shootdirection == "up")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.forward, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.forward, transform.rotation);
                 }
                 if (shootdirection == "down")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.back, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.back, transform.rotation);
                 }
                 if (shootdirection == "left")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.left, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.left, transform.rotation);
                 }
                 if (shootdirection == "right")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.right, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.right, transform.rotation);
                 }
                 if (shootdirection == "uright")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.right + Vector3.forward, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.right + Vector3.forward, transform.rotation);
                 }
                 if (shootdirection == "dright")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.right + Vector3.back, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.right + Vector3.back, transform.rotation);
                 }
                 if (shootdirection == "uleft")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.left + Vector3.forward, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.left + Vector3.forward, transform.rotation);
                 }
                 if (shootdirection == "dleft")
                 {
-                    Instantiate(meleeweapon, transform.position + Vector3.left + Vector3.down, transform.rotation);
+                    mylastbullet = Instantiate(meleeweapon, transform.position + Vector3.left + Vector3.back, transform.rotation);
                 }
-
+                var shotowner = mylastbullet.GetComponent<RemoveSelf>();
+                shotowner.myowner = gameObject;
                 //dont let the player fire a beam;
 
                 melee = false;
@@ -250,6 +253,7 @@ public class PlayerMove : MonoBehaviour
                 mylastbomb = Instantiate(bigbomb, transform.position, transform.rotation);
                 var bombdmg = mylastbomb.GetComponent<RemoveSelf>();
                 bombdmg.mypower = bombdamage;
+                bombdmg.myowner = gameObject;
                 //disables bombs being used
                 Debug.Log("bombplace");
                 usebomb = false;

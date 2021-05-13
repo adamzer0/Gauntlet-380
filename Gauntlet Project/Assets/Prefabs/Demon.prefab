@@ -108,7 +108,7 @@ MonoBehaviour:
   newpos: {x: 0, y: 0, z: 0}
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
-  health: 0
+  health: 2
   shootdelaymax: 50
   enemyprojectile: {fileID: 5218505755764084189, guid: 19ab6080c1f2a4f3cad546b9c6972a49,
     type: 3}
