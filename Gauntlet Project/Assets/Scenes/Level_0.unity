@@ -557,10 +557,6 @@ MonoBehaviour:
   player4: {fileID: 5458157277190972361, guid: 313082c7d7559af4a8d1e67371b880bd, type: 3}
   target: {fileID: 0}
   camera: {fileID: 1090515926}
-  play1exist: 0
-  play2exist: 0
-  play3exist: 0
-  play4exist: 0
 --- !u!1001 &455445548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,7 +794,7 @@ Transform:
   m_LocalScale: {x: 0.9425614, y: 3, z: 21.593832}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1090515926
 GameObject:
@@ -1644,7 +1640,7 @@ PrefabInstance:
     - target: {fileID: 7370573338180927741, guid: 571cdceddc58d914db8e78d8abfa8519,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7370573338180927741, guid: 571cdceddc58d914db8e78d8abfa8519,
         type: 3}

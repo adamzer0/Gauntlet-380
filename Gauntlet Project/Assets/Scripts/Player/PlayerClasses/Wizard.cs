@@ -9,6 +9,7 @@ public class Wizard : PlayerMove
     
     public override void Update()
     {
+       
         if (Input.GetKey(KeyCode.UpArrow))
         {
             myup = true;
@@ -39,5 +40,5 @@ public class Wizard : PlayerMove
         }
         base.Update();
     }
-
+   
 }

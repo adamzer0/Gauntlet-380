@@ -26,9 +26,9 @@ public class UIDisplay : MonoBehaviour
 
         stV.text = "Score  " + Valkyrie.Uscore.ToString();
         htV.text = "Health  " + Valkyrie.Uhealth.ToString();
-
-        stWZ.text = "Score  " + Wizard.Uscore.ToString();
-        htWZ.text = "Health  " + Wizard.Uhealth.ToString();
+      
+       stWZ.text = "Score  " + Wizard.WZscore.ToString();
+      htWZ.text = "Health  " + Wizard.WZhealth.ToString();
 
         stE.text = "Score  " + Elf.Uscore.ToString();
         htE.text = "Health  " + Elf.Uhealth.ToString();

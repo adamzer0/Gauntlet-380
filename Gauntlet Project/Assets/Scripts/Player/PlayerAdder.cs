@@ -10,10 +10,10 @@ public class PlayerAdder : MonoBehaviour
     public GameObject player4;
     public GameObject target;
     public GameObject camera;
-    public int play1exist = 0;
-    public int play2exist = 0;
-    public int play3exist = 0;
-    public int play4exist = 0;
+    public static int play1exist = 0;
+    public static int play2exist = 0;
+    public static int play3exist = 0;
+    public static int play4exist = 0;
     // Update is called once per frame
     void Update()
     {

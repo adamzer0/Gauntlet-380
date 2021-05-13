@@ -29,13 +29,12 @@ public class PlayerMove : MonoBehaviour
 
 
     //health drains slowly
-    public bool playerSpawned = false; 
+
     public int healthlosstimermax = 30;
-    public int healthlosstimer = 30;
+   public int healthlosstimer = 30;
+    public bool playerSpawned = false;
     //health
-    public static int Uhealth = 600;
     public int health = 600;
-    public static int Uscore = 0;
     public int score = 0;
     public int bombs = 0;
     public int keys = 0;
@@ -75,11 +74,11 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            if (playerSpawned == true)
+          if(playerSpawned==true)
             {
                 healthlosstimer -= 1;
-            }//health only drains once player enters the game
-            if (healthlosstimer <= 0)
+            }
+           if (healthlosstimer <= 0)
             {
                 health -= 1;
                 healthlosstimer = healthlosstimermax;
@@ -269,10 +268,7 @@ public class PlayerMove : MonoBehaviour
         }
         
     }
-    private void LateUpdate()
-    {
-        equalize();
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (health <= 0)
@@ -367,9 +363,4 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void equalize()
-    {
-        Uhealth = health;
-        Uscore = score;
-    }
 }
