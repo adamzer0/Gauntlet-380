@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8071240460164992437}
   - component: {fileID: 6037296869063148600}
   m_Layer: 0
-  m_Name: Melee
-  m_TagString: Untagged
+  m_Name: ValkMelee
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removedelay: 5
+  removedelaynodelta: 3
+  myowner: {fileID: 0}
+  mypower: 1
 --- !u!1 &8755873332251443358
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removedelay: 5
+  removedelaynodelta: 3
+  myowner: {fileID: 0}
+  mypower: 1
 --- !u!54 &8755873332251443359
 Rigidbody:
   m_ObjectHideFlags: 0

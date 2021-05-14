@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7687596762547660866}
   m_Layer: 0
   m_Name: WizardMelee
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removedelay: 5
+  removedelaynodelta: 3
+  myowner: {fileID: 0}
   mypower: 1
 --- !u!1 &4675863834192719076
 GameObject:
@@ -153,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removedelay: 5
+  removedelaynodelta: 3
+  myowner: {fileID: 0}
   mypower: 1
 --- !u!54 &4675863834192719077
 Rigidbody:

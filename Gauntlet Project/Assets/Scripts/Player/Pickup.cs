@@ -12,9 +12,9 @@ public class Pickup : MonoBehaviour
     public int amount = 100;
     public GameObject smallbomb;
 
-    public AudioSource shotFood1; 
-    public AudioSource shotFood2; 
-    public AudioSource shotFood3;
+    public AudioClip shotFood1; 
+    public AudioClip shotFood2; 
+    public AudioClip shotFood3;
     
 
     private int randomVal;
@@ -29,19 +29,19 @@ public class Pickup : MonoBehaviour
                 switch(randomVal)
                 { 
                     case 1:
-      
-                        shotFood1.Play();
+
+                        AudioSource.PlayClipAtPoint(shotFood1, transform.position);
                         Destroy(other.gameObject);
                         break;
                     case 2:
               
                         Destroy(other.gameObject);
-                        shotFood2.Play();
+                        AudioSource.PlayClipAtPoint(shotFood2, transform.position);
                         break;
                     case 3:
                       
                         Destroy(other.gameObject);
-                        shotFood3.Play();
+                        AudioSource.PlayClipAtPoint(shotFood3, transform.position);
                         break;
 
                     default:

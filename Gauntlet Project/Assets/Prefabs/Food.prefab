@@ -113,9 +113,9 @@ MonoBehaviour:
   amount: 100
   smallbomb: {fileID: 8644668592211417509, guid: df2ab8eb6736f4a69bffe6f782d752db,
     type: 3}
-  shotFood1: {fileID: 8897046682824569154}
-  shotFood2: {fileID: 3511783959923559145}
-  shotFood3: {fileID: 741715054036447425}
+  shotFood1: {fileID: 8300000, guid: eeb7d8e990140fa42ac60bbdbfd9715f, type: 3}
+  shotFood2: {fileID: 8300000, guid: 6b3fc319655b95f408164f5d89e35330, type: 3}
+  shotFood3: {fileID: 8300000, guid: 502ae4f90feff6848b0859c774d1071d, type: 3}
 --- !u!54 &3945829167156162986
 Rigidbody:
   m_ObjectHideFlags: 0
