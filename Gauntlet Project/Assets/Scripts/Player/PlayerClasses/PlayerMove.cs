@@ -27,9 +27,9 @@ public class PlayerMove : MonoBehaviour
     public GameObject mylastbomb;
     public GameObject mylastbullet;
 
-
+    public Text h_text;
+    public Text s_text;
     //health drains slowly
-
     public int healthlosstimermax = 30;
    public int healthlosstimer = 30;
     public bool playerSpawned = false;
@@ -270,9 +270,12 @@ public class PlayerMove : MonoBehaviour
             }
             //let the player fire again
         }
-        
+       
     }
-
+    private void LateUpdate()
+    {
+        updateUI(); 
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (health <= 0)
@@ -365,6 +368,11 @@ public class PlayerMove : MonoBehaviour
                 health -= 1 - armor;
             }
         }
+    }
+   private void updateUI()
+    {
+        h_text.text = "Health  " + health.ToString();
+        s_text.text = "Score  " + score.ToString(); 
     }
 
 }

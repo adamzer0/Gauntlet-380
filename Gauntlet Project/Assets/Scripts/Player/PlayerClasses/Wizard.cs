@@ -26,19 +26,19 @@ public class Wizard : PlayerMove
         {
             myleft = true;
         }
-        if (Input.GetKeyDown("g"))
+        if (Input.GetKeyDown("space"))
         {
             firing = true;
         }
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("x"))
         {
             usebomb = true;
         }
-        if (Input.GetKeyDown("t"))
+        if (Input.GetKeyDown("z"))
         {
             melee = true;
         }
         base.Update();
     }
    
-}
+}  

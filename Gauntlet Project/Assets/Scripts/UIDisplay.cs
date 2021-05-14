@@ -5,32 +5,8 @@ using UnityEngine.UI;
 
 public class UIDisplay : MonoBehaviour
 {
-    //warrior text
-    public Text htWA;
-    public Text stWA;
-    //valk text
-    public Text htV;
-    public Text stV;
-    //wiz text
-    public Text htWZ;
-    public Text stWZ;
-    //elf text
-    public Text htE;
-    public Text stE;
-
-
-   /* private void Update()
+    private void Start()
     {
-        stWA.text = "Score  " + Warrior.Uscore.ToString();
-        htWA.text = "Health  " + Warrior.Uhealth.ToString();
-
-        stV.text = "Score  " + Valkyrie.Uscore.ToString();
-        htV.text = "Health  " + Valkyrie.Uhealth.ToString();
-      
-       stWZ.text = "Score  " + Wizard.WZscore.ToString();
-      htWZ.text = "Health  " + Wizard.WZhealth.ToString();
-
-        stE.text = "Score  " + Elf.Uscore.ToString();
-        htE.text = "Health  " + Elf.Uhealth.ToString();
-    }*/
+        DontDestroyOnLoad(this.gameObject);
+    }
 }
