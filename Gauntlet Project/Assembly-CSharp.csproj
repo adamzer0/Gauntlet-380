@@ -62,8 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\keycodeexample.cs" />
-    <Compile Include="Assets\Leaderboard.cs" />
+    <Compile Include="Assets\Github Test Files\keycodeexample.cs" />
+    <Compile Include="Assets\Github Test Files\Leaderboard.cs" />
+    <Compile Include="Assets\Github Test Files\TESTFILE.cs" />
+    <Compile Include="Assets\Github Test Files\TestMe.cs" />
+    <Compile Include="Assets\README.cs" />
     <Compile Include="Assets\Scripts\Enemies\BasicEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\DeathsAura.cs" />
     <Compile Include="Assets\Scripts\Enemies\Demon.cs" />
@@ -87,9 +90,7 @@
     <Compile Include="Assets\Scripts\Player\RemoveSelf.cs" />
     <Compile Include="Assets\Scripts\Player\Stairs.cs" />
     <Compile Include="Assets\Scripts\Player\Teleporter.cs" />
-    <Compile Include="Assets\Scripts\TestMe.cs" />
     <Compile Include="Assets\Scripts\UIDisplay.cs" />
-    <Compile Include="Assets\TESTFILE.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/adam/Documents/GitHub/Gauntlet-380/Gauntlet Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
