@@ -244,18 +244,21 @@ public class PlayerMove : MonoBehaviour
                 melee = false;
             }
             //when you're using a bomb, it kills everything on screen
-            if (usebomb && bombs >= 1)
+            if (usebomb)
             {
-                //remove the bomb and free up storage
-                bombs -= 1;
-                storage += 1;
-                //setup bomb damage
-                mylastbomb = Instantiate(bigbomb, transform.position, transform.rotation);
-                var bombdmg = mylastbomb.GetComponent<RemoveSelf>();
-                bombdmg.mypower = bombdamage;
-                bombdmg.myowner = gameObject;
-                //disables bombs being used
-                Debug.Log("bombplace");
+                if (bombs >= 1)
+                {
+                    //remove the bomb and free up storage
+                    bombs -= 1;
+                    storage += 1;
+                    //setup bomb damage
+                    mylastbomb = Instantiate(bigbomb, transform.position, transform.rotation);
+                    var bombdmg = mylastbomb.GetComponent<RemoveSelf>();
+                    bombdmg.mypower = bombdamage;
+                    bombdmg.myowner = gameObject;
+                    //disables bombs being used
+                    Debug.Log("bombplace");
+                }
                 usebomb = false;
             }
             //this removes all inputs, as inputs are declared in another script
@@ -356,6 +359,12 @@ public class PlayerMove : MonoBehaviour
             {
                 health -= Random.Range(3, 10) - armor;
                 Destroy(other.gameObject);
+            }
+            if (other.gameObject.tag == "WinGame")
+            {
+                Destroy(Cam.gameObject);
+                Destroy(spawner.gameObject);
+                Destroy(gameObject);
             }
         }
     }

@@ -1550,7 +1550,7 @@ PrefabInstance:
     - target: {fileID: 5269427598989415160, guid: fcef6465b9a5b419faaa2bd5c767806a,
         type: 3}
       propertyPath: nextlevel
-      value: Level_1
+      value: WinScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcef6465b9a5b419faaa2bd5c767806a, type: 3}
