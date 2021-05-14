@@ -98,6 +98,7 @@ MonoBehaviour:
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
   health: 10
+  scoregive: 50
   healthDrained: 0
 --- !u!65 &8708727367567700895
 BoxCollider:

@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6634106027975871936}
   m_Layer: 0
   m_Name: Sorcerer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
   health: 2
+  scoregive: 10
   c: {r: 0, g: 0, b: 0, a: 0}
   invisturn: 150
 --- !u!65 &6634106027975871936

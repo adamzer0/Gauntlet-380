@@ -97,6 +97,7 @@ MonoBehaviour:
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
   health: 1
+  scoregive: 20
   shootdelaymax: 50
   lobberprojectile: {fileID: 6434496826205815586, guid: c545ce3eca63e4e02b1ee62eefb6d144,
     type: 3}

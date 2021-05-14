@@ -113,6 +113,7 @@ MonoBehaviour:
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
   health: 1
+  scoregive: 5
 --- !u!65 &3589233008022988105
 BoxCollider:
   m_ObjectHideFlags: 0

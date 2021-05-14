@@ -98,7 +98,7 @@ MonoBehaviour:
   neweuler: {x: 0, y: 0, z: 0}
   speed: 0.03
   health: 3
-  type: Grunt
+  scoregive: 15
 --- !u!54 &3689710007424596315
 Rigidbody:
   m_ObjectHideFlags: 0

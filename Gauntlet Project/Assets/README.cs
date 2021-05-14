@@ -21,10 +21,10 @@ public class README : MonoBehaviour
      * 
      * Controls:
      * 
-     * Warrior
-     * Valk
-     * Wizard
-     * Elf
+     * Warrior (WASD Movement), F to use projectile, E to melee, Q to use bombs 
+     * Valk (Left Stick Contoller Movement), A to use projectile, X to melee, B to use bombs 
+     * Wizard (Arrow Key Movement), Space to use projectile, Z to melee, X to use bombs 
+     * Elf (IJKL Movement), P to use projectile, H to melee, U to use bombs 
      * 
      * 
      * To start the game, start at level 0. No other level will work.
