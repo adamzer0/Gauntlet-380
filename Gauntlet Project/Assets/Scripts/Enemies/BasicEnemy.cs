@@ -37,7 +37,7 @@ public class BasicEnemy : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
                 {
-                    newpos.z += speed;
+                    newpos.z += speed * Time.deltaTime * 60;
                     neweuler.y = 0;
 
                 }
@@ -47,7 +47,7 @@ public class BasicEnemy : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.back), speed + 0.5f))
                 {
-                    newpos.z -= speed;
+                    newpos.z -= speed * Time.deltaTime * 60;
                     neweuler.y = 180;
 
                 }
@@ -57,7 +57,7 @@ public class BasicEnemy : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.left), speed + 0.5f))
                 {
-                    newpos.x -= speed;
+                    newpos.x -= speed * Time.deltaTime * 60;
 
 
                     if (neweuler.y >= -5 && neweuler.y <= 5)
@@ -82,7 +82,7 @@ public class BasicEnemy : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.right), speed + 0.5f))
                 {
-                    newpos.x += speed;
+                    newpos.x += speed * Time.deltaTime * 60;
 
 
                     if (neweuler.y >= -5 && neweuler.y <= 5)

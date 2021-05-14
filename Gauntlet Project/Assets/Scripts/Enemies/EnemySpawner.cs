@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private int spawndelay = 30;
+    private float spawndelay = 30;
     public int maxspawndelay = 100;
     public GameObject spawntype;
     public int health = 100;
@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
 
-        spawndelay -= 1;
+        spawndelay -= 1 * Time.deltaTime * 60;
         if (spawndelay<= 0)
         {
             spawndelay = maxspawndelay;

@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
     public Text s_text;
     //health drains slowly
     public int healthlosstimermax = 30;
-   public int healthlosstimer = 30;
+   public float healthlosstimer = 30;
     public bool playerSpawned = false;
     //health
     public int health = 600;
@@ -79,7 +79,7 @@ public class PlayerMove : MonoBehaviour
         {
           if(playerSpawned==true)
             {
-                healthlosstimer -= 1;
+                healthlosstimer -= 1 * Time.deltaTime * 60;
             }
            if (healthlosstimer <= 0)
             {
@@ -98,7 +98,7 @@ public class PlayerMove : MonoBehaviour
                 neweuler.y = 0;
                 if (!Physics.Raycast(transform.position, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.forward), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.forward), speed + 0.5f))
                 {
-                    newpos.z += speed;
+                    newpos.z += speed*Time.deltaTime * 60;
 
 
                 }
@@ -109,7 +109,7 @@ public class PlayerMove : MonoBehaviour
                 shootdirection = "down";
                 if (!Physics.Raycast(transform.position, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.right / 2, (Vector3.back), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.left / 2, (Vector3.back), speed + 0.5f))
                 {
-                    newpos.z -= speed;
+                    newpos.z -= speed * Time.deltaTime * 60; 
 
                 }
             }
@@ -119,7 +119,7 @@ public class PlayerMove : MonoBehaviour
                 shootdirection = "left";
                 if (!Physics.Raycast(transform.position, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.left), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.left), speed + 0.5f))
                 {
-                    newpos.x -= speed;
+                    newpos.x -= speed * Time.deltaTime * 60; 
 
                     if (myup)
                     {
@@ -139,7 +139,7 @@ public class PlayerMove : MonoBehaviour
                 shootdirection = "right";
                 if (!Physics.Raycast(transform.position, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.forward / 2, (Vector3.right), speed + 0.5f) && !Physics.Raycast(transform.position + Vector3.back / 2, (Vector3.right), speed + 0.5f))
                 {
-                    newpos.x += speed;
+                    newpos.x += speed * Time.deltaTime * 60; 
 
                     if (myup)
                     {

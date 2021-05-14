@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lobber : BasicEnemy
 {
-    private int shootdelay = 0;
+    private float shootdelay = 50;
     public int shootdelaymax = 50;
     public GameObject lobberprojectile;
    
@@ -16,7 +16,7 @@ public class Lobber : BasicEnemy
         //every frame delay goes down by one
         //if delay is 0, then it will create
         //a projectile and reset the delay.
-        shootdelay -= 1;
+        shootdelay -= 1 * Time.deltaTime * 60;
         if (shootdelay <= 0)
         {
             Instantiate(lobberprojectile, transform.position, transform.rotation);
