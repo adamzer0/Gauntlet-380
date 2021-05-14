@@ -54,6 +54,9 @@ public class PlayerMove : MonoBehaviour
     public bool usebomb = false;
     public bool melee = false;
 
+    //audio variables
+    public AudioSource healthlow;
+    private bool soundPlayed = false;
     private void Awake()
     {
         playerSpawned = true; 
@@ -273,11 +276,20 @@ public class PlayerMove : MonoBehaviour
             }
             //let the player fire again
         }
-       
+       if(health >200)
+        {
+            soundPlayed = false; 
+        }
     }
     private void LateUpdate()
     {
         updateUI(); 
+        if (health<200 && soundPlayed==false)
+        {
+            healthlow.Play();
+            soundPlayed = true; 
+        }//play hp low sound but not repeadtedly
+
     }
     private void OnTriggerEnter(Collider other)
     {

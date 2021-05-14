@@ -1994,5 +1994,165 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 199480216758553217, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press 2 to Play
+
+        Left Stick Movement
+
+        A for Projectile
+
+        X to Melee
+
+        B For Bombs
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216758553217, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216758553217, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216758553217, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216758553217, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216758553217, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216772020705, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press 3 to Play
+
+        Arrow Key Movement
+
+        Space for Projectile
+
+        Z to Melee
+
+        X For Bombs
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216772020705, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216772020705, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216772020705, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216772020705, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480216772020705, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217248391564, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press 1 to Play
+
+        WASD Movement
+
+        F for Projectile
+
+        E to Melee
+
+        Q For Bombs
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217248391564, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217248391564, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217248391564, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217248391564, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217248391564, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217507623630, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press 4 to Play
+
+        IJKL Movement
+
+        P for Projectile
+
+        H to Melee
+
+        U For Bombs
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217507623630, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217507623630, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217507623630, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217507623630, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 199480217507623630, guid: 43d048be078d0d143a3d371d5e4c33ad,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d048be078d0d143a3d371d5e4c33ad, type: 3}
